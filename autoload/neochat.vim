@@ -15,7 +15,7 @@ function! neochat#establish(protocol) abort
 endfunction
 
 function! neochat#say(connection, message) abort
-  return neochat#procotol#{a:connection.protocol}#say(a:connection, a:message)
+  return neochat#protocol#{a:connection.protocol}#say(a:connection, a:message)
 endfunction
 
 let &cpo = s:save_cpo
