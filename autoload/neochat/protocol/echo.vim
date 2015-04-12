@@ -4,7 +4,7 @@ set cpo&vim
 let s:protocol = {}
 
 function! neochat#protocol#echo#say(connection, message) abort
-  let a:connection.buffer = get(a:connection, 'buffer', '') + [a:message]
+  let a:connection.buffer = get(a:connection, 'buffer', []) + [a:message]
   return 1
 endfunction
 
