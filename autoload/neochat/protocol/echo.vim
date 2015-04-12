@@ -3,8 +3,12 @@ set cpo&vim
 
 let s:protocol = {}
 
+function! neochat#protocol#echo#establish() abort
+  return {'buffer': []}
+endfunction
+
 function! neochat#protocol#echo#say(connection, message) abort
-  let a:connection.buffer = get(a:connection, 'buffer', []) + [a:message]
+  let a:connection.buffer = a:connection + [a:message]
   return 1
 endfunction
 
