@@ -28,8 +28,8 @@ endfunction
 
 " for debugging
 function! neochat#test() abort
-  let ui = neochat#ui#vanilla#open()
   let connection = neochat#protocol#echoback#establish()
+  let ui = neochat#ui#vanilla#open(connection)
   let messages = neochat#protocol#echoback#hear(connection)
   call ui.render(messages)
 endfunction
