@@ -8,6 +8,12 @@ function! neochat#protocol#echo#say(connection, message) abort
   return 1
 endfunction
 
+function! neochat#protocol#echo#hear(connection) abort
+  let messages = a:connection.buffer
+  let a:connection.buffer = []
+  return messages
+endfunction
+
 " function! neochat#procotol#echo#define() abort
 "   echo 'Hello! Let us echo!'
 "   return s:protocol

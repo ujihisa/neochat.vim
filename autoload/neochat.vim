@@ -18,5 +18,11 @@ function! neochat#say(connection, message) abort
   return neochat#protocol#{a:connection.protocol}#say(a:connection, a:message)
 endfunction
 
+function! neochat#hear(connection) abort
+  let messages = neochat#protocol#{a:connection.protocol}#hear(a:connection)
+  " TODO
+  echo messages
+endfunction
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
