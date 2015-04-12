@@ -23,7 +23,7 @@ This repository is the neochat framework, and has a sample protocols and UIs.
 
 * protocol/echoback
     * A dummy protocol. It just returns what you say.
-* ui/???
+* ui/vanilla
     * TODO
 
 ## NeoChat Workflow
