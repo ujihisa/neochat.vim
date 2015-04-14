@@ -4,6 +4,7 @@ set cpo&vim
 let g:neochat#V = vital#of('neochat')
 let g:neochat#CP = g:neochat#V.import('ConcurrentProcess')
 let g:neochat#BM = g:neochat#V.import('Vim.BufferManager')
+let g:neochat#B = g:neochat#V.import('Vim.Buffer')
 
 function! neochat#is_available() abort
   return g:neochat#CP.is_available()
@@ -42,11 +43,27 @@ function! neochat#start(name_protocol, name_ui) abort
 endfunction
 
 function! s:autoupdate() abort
+  if g:neochat#B.is_cmdwin()
+    return
+  endif
+
+  call s:trigger_keys()
   for [connection, ui] in s:current
     let messages = neochat#protocol#{connection.protoname}#hear(connection)
     call ui.render(messages)
   endfor
 endfunction
+
+" borrowed from thinca/quickrun#trigger_keys().
+function! s:trigger_keys() abort
+  if mode() =~# '[iR]'
+    let input = "\<C-r>\<ESC>"
+  else
+    let input = "g\<ESC>" . (0 < v:count ? v:count : '')
+  endif
+  call feedkeys(input, 'n')
+endfunction
+
 
 function! neochat#test() abort
   return neochat#start('echoback', 'vanilla')
