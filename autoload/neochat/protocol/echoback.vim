@@ -1,10 +1,12 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
+let s:plugin_dir = expand('<sfile>:h:h:h:h')
+
 let s:protocol = {}
 
 function! s:cp_of() abort
-  return g:neochat#CP.of('irb --noinspect --noreadline --prompt default -r~/.vimbundles/neochat.vim/a.rb', '', [
+  return g:neochat#CP.of('irb --noinspect --noreadline --prompt default -r' . s:plugin_dir . '/a.rb', '', [
         \ ['*read*', '_', 'irb(main):\d\+:\d\+> ']])
 endfunction
 
