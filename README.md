@@ -10,7 +10,7 @@ TODO
 
 <http://lingr.com/room/vim>
 
-## NeoChat Archtecture
+## NeoChat Architecture
 
 * neochat framework
     * (glueing)
