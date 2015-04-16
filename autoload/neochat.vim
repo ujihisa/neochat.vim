@@ -47,11 +47,11 @@ function! s:autoupdate() abort
     return
   endif
 
-  call s:trigger_keys()
   for [connection, ui] in s:current
     let messages = neochat#protocol#{connection.protoname}#hear(connection)
     call ui.render(messages)
   endfor
+  call s:trigger_keys()
 endfunction
 
 " borrowed from thinca/quickrun#trigger_keys().

@@ -2,7 +2,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! s:render(messages) dict abort
-  call s:append(self.m_history, a:messages)
+  call s:append(self.m_history, map(copy(a:messages), 'v:val["name"] . ": " . v:val["body"]'))
 endfunction
 
 let s:ui_vanilla = {
