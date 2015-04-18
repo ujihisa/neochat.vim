@@ -7,11 +7,11 @@ let s:room_id = ''
 let s:config_path = s:plugin_dir . '/secret.json'
 
 function! s:find_executable() abort
-    let files = split(globpath(&runtimepath, 'lingr'), "\n")
-    if empty(files)
-        throw "Missing executable."
-    endif
-    return files[0]
+  let files = split(globpath(&runtimepath, 'lingr'), "\n")
+  if empty(files)
+    throw "Missing executable."
+  endif
+  return files[0]
 endfunction
 let s:go_backend = s:find_executable()
 
