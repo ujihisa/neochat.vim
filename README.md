@@ -36,6 +36,14 @@ This repository is the neochat framework, and has a sample protocols and UIs.
 
 All functions are non-blocking.
 
+## Authors
+
+* Tatsuhiro Ujihisa <http://github.com/ujihisa>
+    * core
+    * ui/vanilla, protocol/echoback
+* Kamichidu <http://github.com/kamichidu>
+    * ui/lingr
+
 ## License
 
 GPLv3 or any later versions.
