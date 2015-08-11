@@ -8,7 +8,7 @@ CONTENTS					*neochat-contents*
 Introduction		|neochat-introduction|
 
 ==============================================================================
-INTRODUCTION					*neoclojure-introduction*
+INTRODUCTION					*neochat-introduction*
 
 TODO
 
